@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golf Stroke Counter</title>
+
+
+<style>
+  .add-stroke {
+    background-color: rgb(26, 80, 230);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .add-stroke:active {
+    background-color: rgb(20, 70, 200);
+  }
+
+  .sub-stroke {
+    background-color: rgb(235, 60, 60);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    
+  }
+
+  .sub-stroke:active {
+    background-color: rgb(200, 50, 50);
+  }
+
+  .reset-stroke {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;  
+    margin-left: 5px;  
+
+  }
+
+  .reset-stroke:active {
+    background-color: darkgray;
+  }
+
+  .counter {
+    font-size: 75px;
+    margin: 20px 80px;
+    background-color: rgb(35, 98, 149);
+    color: red;
+    border: none;
+    padding: 30px 20px;
+    text-align: center;
+    width: 100px;
+  }
+</style>
+
+</head>
+<body>
+
+  <div class="counter" id="counter">0</div>
+
+  <div>
+  <button class="add-stroke" onclick="add()">
+    (+) Stroke
+  </button>
+
+  <button class="sub-stroke" onclick="subtract()">
+    (-) Stroke
+  </button>
+
+  <button class="reset-stroke" onclick="reset()">
+    Reset
+  </button>
+
+  </div>
+
+  <script>
+    // Initialize the count
+    let count = 0;
+
+    // Get the HTML element (the <div>) with the ID "counter"
+    const display = document.getElementById('counter');
+
+    // Funtion to add 1 to the count
+    function add() {
+      count++;
+      display.textContent = count;
+    }
+
+    // Function to subtract 1 from the count
+    function subtract() {
+      if (count > 0) {
+        count--;
+        display.textContent = count;
+      }
+    }
+
+    // Function to reset the count to 0
+    function reset() {
+      count = 0;
+      display.textContent = count;
+    }
+
+  </script>
+
+
+
+</body>
+</html>
